@@ -14,8 +14,7 @@ public class Trap : MonoBehaviour
         {
             Vector2 knockbackDir = (collision.transform.position - transform.position).normalized;
             player.TakeDamage(damage, knockbackDir);
-            Debug.Log("Tes");
-        }
-    }
+        }
+    }
 
 }

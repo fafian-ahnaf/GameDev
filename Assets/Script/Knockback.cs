@@ -27,6 +27,6 @@ public class Knockback : MonoBehaviour
     {
         yield return new WaitForSeconds(knockBackTime);
         rb.velocity = Vector2.zero;
-        GettingKnockedBack = false;
-    }
+        GettingKnockedBack = false;
+    }
 }

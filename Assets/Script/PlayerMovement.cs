@@ -31,10 +31,15 @@ public class PlayerMovement : MonoBehaviour
     private int currentHealth;
     public TextMeshProUGUI healthText;
 
+    [Header("Coin System")]
+    public int currentCoin = 0;
+    public TextMeshProUGUI coinText;
+
     [Header("Knockback Settings")]
     [SerializeField] private float knockBackTime = 0.2f;
     [SerializeField] private float knockBackThrust = 10f;
     private bool isKnockedBack = false;
+
 
     private void Awake()
     {
@@ -193,5 +198,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(knockBackTime);
         rb.velocity = Vector2.zero;
         isKnockedBack = false;
+    }
+
+    public void addCoin(int amount)
+    {
+        currentCoin += amount;
+        if (coinText != null)
+        {
+            coinText.text = "Coin : " + currentCoin.ToString();
+        }
     }
 }
